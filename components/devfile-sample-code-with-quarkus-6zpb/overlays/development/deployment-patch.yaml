@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sample-code-with-quarkus-6zpb
+  namespace: sdouglas1-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:3801b251329eb66b1b7f6937b06afa89ac2d8ad364afed7b0b720302c5f7de97
+        name: container-image
+        resources: {}
+status: {}
