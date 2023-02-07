@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: hacbs-test-project-jeh2
+  namespace: sdouglas1-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:812e370717ec38bdd736830bd14a0a6c8eada66ca7bad1827e1d02f62d35e37a
+        name: container-image
+        resources: {}
+status: {}
