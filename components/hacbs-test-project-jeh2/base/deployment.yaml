@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: hacbs-test-project-jeh2
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:sdouglas1-tenant-hacbs-test-project-jeh2
+      - image: quay.io/redhat-appstudio/user-workload@sha256:812e370717ec38bdd736830bd14a0a6c8eada66ca7bad1827e1d02f62d35e37a
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -40,6 +40,9 @@ spec:
           tcpSocket:
             port: 8080
         resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
           requests:
             cpu: 10m
             memory: 50Mi
