@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: devfile-sample-code-with-quarkus-6zpb
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:sdouglas1-tenant-devfile-sample-code-with-quarkus-6zpb
+      - image: quay.io/redhat-appstudio/user-workload@sha256:3801b251329eb66b1b7f6937b06afa89ac2d8ad364afed7b0b720302c5f7de97
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -40,6 +40,9 @@ spec:
           tcpSocket:
             port: 8081
         resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
           requests:
             cpu: 10m
             memory: 100Mi
